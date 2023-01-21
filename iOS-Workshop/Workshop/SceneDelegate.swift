@@ -12,14 +12,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private let rootNavigationController = UINavigationController()
     
-    // private let usersAssembly = UserAssembly()
-    
     // делаем assembly вычислимой переменной, чтобы она могла обращаться к self
     private var usersAssembly: IUsersAssembly { UsersAssembly() }
     
     // router, который внутри себя скрывает всю логику показа экрана
     private lazy var router: IRouter = {
-        Router(transitionHandler: rootNavigationController, usersAssembly: usersAssembly)
+        Router(usersAssembly: usersAssembly)
+    }()
+    
+    private lazy var tabBarController = TabBarViewController(
+        usersTransitionHandler: rootNavigationController,
+        testViewController: TestViewController()
+    )
+    
+    private lazy var tabBarCoordinator: TabBarCoordinator = {
+        TabBarCoordinator(
+            userFlowCoordinator: UserFlowCoordinator(router: router),
+            testFlowCoordinator: TestFlowCoordinator(),
+            transitionHandler: tabBarController
+        )
     }()
 
     func scene(_ scene: UIScene,
@@ -27,9 +38,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 //        rootNavigationController
+        rootNavigationController.tabBarItem = UITabBarItem(title: "Root", image: nil, selectedImage: nil)
+        tabBarCoordinator.start(0)
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = rootNavigationController
-        router.showUsersScreen()
+        window.rootViewController = tabBarController
         self.window = window
         window.makeKeyAndVisible()
     }

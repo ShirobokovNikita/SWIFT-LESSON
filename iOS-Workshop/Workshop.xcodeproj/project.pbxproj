@@ -19,6 +19,12 @@
 		AC86E8F029324E660075571C /* UsersAlertViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86E8EF29324E660075571C /* UsersAlertViewFactory.swift */; };
 		AC86E8F22932566B0075571C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86E8F12932566B0075571C /* UserCell.swift */; };
 		C9D93420F41B73ED56D4723E /* Pods_Workshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F02ACC399CD0D44B9856A6 /* Pods_Workshop.framework */; };
+		E004F024297C4CE000DDBEA4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E004F023297C4CE000DDBEA4 /* AppCoordinator.swift */; };
+		E004F026297C4CF100DDBEA4 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E004F025297C4CF100DDBEA4 /* TabBarCoordinator.swift */; };
+		E004F028297C4D8B00DDBEA4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E004F027297C4D8B00DDBEA4 /* TabBarViewController.swift */; };
+		E004F02A297C4F5F00DDBEA4 /* UserFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E004F029297C4F5F00DDBEA4 /* UserFlowCoordinator.swift */; };
+		E004F02D297C513300DDBEA4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E004F02C297C513300DDBEA4 /* TestViewController.swift */; };
+		E004F02F297C519E00DDBEA4 /* TestFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E004F02E297C519E00DDBEA4 /* TestFlowCoordinator.swift */; };
 		E079F6D129730BEC00667EB0 /* PostsPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E079F6D029730BEC00667EB0 /* PostsPresentor.swift */; };
 		E079F6D329730BFC00667EB0 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E079F6D229730BFC00667EB0 /* PostsViewController.swift */; };
 		E079F6D52973160B00667EB0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E079F6D42973160B00667EB0 /* PostCell.swift */; };
@@ -47,6 +53,12 @@
 		AC86E8ED29324B000075571C /* UsersViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewDataSource.swift; sourceTree = "<group>"; };
 		AC86E8EF29324E660075571C /* UsersAlertViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAlertViewFactory.swift; sourceTree = "<group>"; };
 		AC86E8F12932566B0075571C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		E004F023297C4CE000DDBEA4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E004F025297C4CF100DDBEA4 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		E004F027297C4D8B00DDBEA4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E004F029297C4F5F00DDBEA4 /* UserFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlowCoordinator.swift; sourceTree = "<group>"; };
+		E004F02C297C513300DDBEA4 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		E004F02E297C519E00DDBEA4 /* TestFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFlowCoordinator.swift; sourceTree = "<group>"; };
 		E079F6D029730BEC00667EB0 /* PostsPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresentor.swift; sourceTree = "<group>"; };
 		E079F6D229730BFC00667EB0 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		E079F6D42973160B00667EB0 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -107,6 +119,9 @@
 				AC080DAA2932384E00B250A6 /* Assets.xcassets */,
 				AC080DAC2932384E00B250A6 /* LaunchScreen.storyboard */,
 				AC080DAF2932384E00B250A6 /* Info.plist */,
+				E004F023297C4CE000DDBEA4 /* AppCoordinator.swift */,
+				E004F025297C4CF100DDBEA4 /* TabBarCoordinator.swift */,
+				E004F027297C4D8B00DDBEA4 /* TabBarViewController.swift */,
 			);
 			path = Workshop;
 			sourceTree = "<group>";
@@ -132,10 +147,12 @@
 		AC86E8E72932468F0075571C /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				E004F02B297C511F00DDBEA4 /* Test */,
 				E079F6CE29730BC300667EB0 /* Posts */,
 				E081DA692948CFB10083CE47 /* Profile */,
 				AC86E8E8293246A60075571C /* Users */,
 				E081DA63294896450083CE47 /* Router.swift */,
+				E004F029297C4F5F00DDBEA4 /* UserFlowCoordinator.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -159,6 +176,15 @@
 				27F02ACC399CD0D44B9856A6 /* Pods_Workshop.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E004F02B297C511F00DDBEA4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				E004F02C297C513300DDBEA4 /* TestViewController.swift */,
+				E004F02E297C519E00DDBEA4 /* TestFlowCoordinator.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		E079F6CE29730BC300667EB0 /* Posts */ = {
@@ -295,8 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E004F02F297C519E00DDBEA4 /* TestFlowCoordinator.swift in Sources */,
 				E081DA64294896450083CE47 /* Router.swift in Sources */,
 				AC86E8E429323F9D0075571C /* User.swift in Sources */,
+				E004F02D297C513300DDBEA4 /* TestViewController.swift in Sources */,
 				AC86E8EA293246B70075571C /* UsersViewController.swift in Sources */,
 				AC86E8E62932406D0075571C /* WorkshopService.swift in Sources */,
 				E081DA682948AA1F0083CE47 /* Post.swift in Sources */,
@@ -307,9 +335,13 @@
 				AC080DA22932384D00B250A6 /* AppDelegate.swift in Sources */,
 				E079F6D129730BEC00667EB0 /* PostsPresentor.swift in Sources */,
 				E079F6D52973160B00667EB0 /* PostCell.swift in Sources */,
+				E004F026297C4CF100DDBEA4 /* TabBarCoordinator.swift in Sources */,
 				E079F6D329730BFC00667EB0 /* PostsViewController.swift in Sources */,
+				E004F028297C4D8B00DDBEA4 /* TabBarViewController.swift in Sources */,
+				E004F02A297C4F5F00DDBEA4 /* UserFlowCoordinator.swift in Sources */,
 				AC86E8F22932566B0075571C /* UserCell.swift in Sources */,
 				E081DA6D2948D2910083CE47 /* ProfileViewController.swift in Sources */,
+				E004F024297C4CE000DDBEA4 /* AppCoordinator.swift in Sources */,
 				E081DA6B2948CFCE0083CE47 /* ProfilePresentor.swift in Sources */,
 				E081DA6F2948D9090083CE47 /* ProfileViewModel.swift in Sources */,
 				AC080DA42932384D00B250A6 /* SceneDelegate.swift in Sources */,

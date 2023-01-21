@@ -9,36 +9,36 @@ import Foundation
 import UIKit
 
 protocol IRouter: AnyObject {
-    func showUsersScreen()
+    func showUsersScreen(from rootViewController: UINavigationController)
     func showProfile(userid: Int)
     func showPosts(userid: Int)
 }
 
 final class Router {
-    private let transitionHandler: UINavigationController
+    private weak var transitionHandler: UINavigationController?
     private let usersAssembly: IUsersAssembly
     
-    init(transitionHandler: UINavigationController, usersAssembly: IUsersAssembly) {
-        self.transitionHandler = transitionHandler
+    init(usersAssembly: IUsersAssembly) {
         self.usersAssembly = usersAssembly
     }
 }
 
 extension Router: IRouter {
-    func showUsersScreen() {
+    func showUsersScreen(from rootViewController: UINavigationController) {
+        self.transitionHandler = rootViewController
         let viewController = usersAssembly.makeUsersScreen(router: self)
-        transitionHandler.pushViewController(viewController, animated: true)
+        transitionHandler?.pushViewController(viewController, animated: true)
     }
     
     func showProfile(userid: Int) {
         let viewController = usersAssembly.makeProfileScreen(userid: userid, router: self)
-        transitionHandler.pushViewController(viewController, animated: true)
+        transitionHandler?.pushViewController(viewController, animated: true)
     }
     
     func showPosts(userid: Int) {
         let viewController = usersAssembly.makePostsScreen(userid: userid)
         viewController.modalPresentationStyle = .formSheet
         viewController.isModalInPresentation = false
-        transitionHandler.present(viewController, animated: true)
+        transitionHandler?.present(viewController, animated: true)
     }
 }
